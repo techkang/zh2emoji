@@ -11,7 +11,7 @@ def get_first_dict():
 
 def get_all_dict():
     all_dict = {}
-    for key, values in emoji_dict.iteritems():
+    for key, values in emoji_dict.items():
         py_list = pypinyin.pinyin(key)
         for py in py_list:
             if py[0] in all_dict:

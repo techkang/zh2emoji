@@ -38,7 +38,7 @@ def get_pinyin(word):
     return pypinyin.pinyin(word)
 
 
-def get_converted(words, explain, method=0):
+def get_converted(words, explain, method):
     emojis = []
     pys = get_pinyin(words)
     for word,py in zip(words,pys):
@@ -53,7 +53,7 @@ def get_converted(words, explain, method=0):
             else:
                 exp.append(item)
         
-    return ' '.join(emojis+exp)
+    return ''.join(emojis+exp)
 
 def create_inverse_dict(d):
     new_dict={}
@@ -65,9 +65,9 @@ def create_inverse_dict(d):
         print(k,v)
     return new_dict
 def run(method=0,explain=True):
-    words = input("Please input text: ")
-    # words='董先生连任吼不吼啊'
-    print(get_converted(words, method,explain))
+    # words = input("Please input text: ")
+    words='文体两开花 弘扬中华文化'
+    print(get_converted(words, explain,method))
 
 
 if __name__ == '__main__':
